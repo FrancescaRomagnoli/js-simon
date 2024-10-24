@@ -5,3 +5,24 @@ function randomNum(min, max) {
 
   return num;
 }
+
+// # data
+
+const generatedNums = [];
+
+const numBox = document.getElementById("num-box");
+
+for (let i = 0; generatedNums.length < 5; i++) {
+  let newNum = randomNum(1, 99);
+  generatedNums.push(newNum);
+
+  numBox.innerHTML += `<div>
+    ${newNum}
+  </div>`;
+}
+
+console.log(generatedNums);
+
+console.log(generatedNums[0]);
+console.log(generatedNums[1]);
+console.log(generatedNums[2]);
