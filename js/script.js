@@ -8,10 +8,12 @@ function randomNum(min, max) {
 
 // # data
 
-const generatedNums = [];
-
 const numBox = document.getElementById("num-box-container");
 const button = document.getElementById("button");
+// * computer nums
+const generatedNums = [];
+// * user nums
+const userNumsList = [];
 
 // # nums generation
 
@@ -38,9 +40,9 @@ const timer = setTimeout(() => {
   }
 }, 3000);
 
-// # user input numbers
+// # user input numbers collection
 
-const userNumsList = [];
+let userResult = document.getElementById("user-result-box");
 
 button.addEventListener("click", () => {
   for (let i = 0; i < generatedNums.length; i++) {
@@ -54,5 +56,10 @@ button.addEventListener("click", () => {
     generatedNums.includes(num)
   );
 
-  console.log(matchingNums);
+  userResult.innerHTML = `
+        <h3>Hai ricordato ${matchingNums.length} numeri correttamente!
+        </h3>
+        <p>I tuoi numeri corretti sono: ${matchingNums} </p>`;
+
+  console.log(matchingNums, matchingNums.length);
 });
