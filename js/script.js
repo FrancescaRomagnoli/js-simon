@@ -11,6 +11,9 @@ function randomNum(min, max) {
 const generatedNums = [];
 
 const numBox = document.getElementById("num-box-container");
+const button = document.getElementById("button");
+
+// # nums generation
 
 for (let i = 0; generatedNums.length < 5; i++) {
   let newNum = randomNum(1, 99);
@@ -35,15 +38,21 @@ const timer = setTimeout(() => {
   }
 }, 3000);
 
-const button = document.getElementById("button");
+// # user input numbers
 
 const userNumsList = [];
 
 button.addEventListener("click", () => {
   for (let i = 0; i < generatedNums.length; i++) {
     let generatedNumInput = document.getElementById(`numBox${i}`);
-    userNumsList.push(generatedNumInput.value);
+    userNumsList.push(parseInt(generatedNumInput.value));
 
     console.log(userNumsList);
   }
+
+  const matchingNums = userNumsList.filter((num) =>
+    generatedNums.includes(num)
+  );
+
+  console.log(matchingNums);
 });
