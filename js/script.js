@@ -23,6 +23,13 @@ for (let i = 0; generatedNums.length < 5; i++) {
 
 console.log(generatedNums);
 
-console.log(generatedNums[0]);
-console.log(generatedNums[1]);
-console.log(generatedNums[2]);
+const timer = setInterval(() => {
+  numBox.innerHTML = "";
+
+  for (let i = 0; i < generatedNums.length; i++) {
+    numBox.innerHTML += `<div>
+      <input type="text">
+    </div>`;
+  }
+  clearInterval(timer);
+}, 3000);
