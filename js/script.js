@@ -38,7 +38,7 @@ const timer = setTimeout(() => {
       <input type="text" id="numBox${i}">
     </div>`;
   }
-}, 3000);
+}, 30000);
 
 // # user input numbers collection
 
@@ -59,7 +59,7 @@ button.addEventListener("click", () => {
   userResult.innerHTML = `
         <h3>Hai ricordato ${matchingNums.length} numeri correttamente!
         </h3>
-        <p>I tuoi numeri corretti sono: ${matchingNums} </p>`;
+        <p>I tuoi numeri corretti sono: ${matchingNums.join(`, `)}.</p>`;
 
   console.log(matchingNums, matchingNums.length);
 });

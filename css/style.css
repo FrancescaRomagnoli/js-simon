@@ -32,3 +32,21 @@ li {
   width: 1000px;
   max-width: 100%;
 }
+
+.d-none {
+  display: none;
+}
+
+/* # main */
+
+#num-box-container,
+#user-result-box {
+  margin-top: 30px;
+  padding-left: 50px;
+  font-size: 1.5rem;
+}
+
+#button {
+  margin-left: 50px;
+  padding: 5px 10px;
+}
