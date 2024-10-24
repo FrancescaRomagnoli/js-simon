@@ -10,7 +10,7 @@ function randomNum(min, max) {
 
 const generatedNums = [];
 
-const numBox = document.getElementById("num-box");
+const numBox = document.getElementById("num-box-container");
 
 for (let i = 0; generatedNums.length < 5; i++) {
   let newNum = randomNum(1, 99);
@@ -23,13 +23,27 @@ for (let i = 0; generatedNums.length < 5; i++) {
 
 console.log(generatedNums);
 
-const timer = setInterval(() => {
+// # game timer
+
+const timer = setTimeout(() => {
   numBox.innerHTML = "";
 
   for (let i = 0; i < generatedNums.length; i++) {
     numBox.innerHTML += `<div>
-      <input type="text">
+      <input type="text" id="numBox${i}">
     </div>`;
   }
-  clearInterval(timer);
 }, 3000);
+
+const button = document.getElementById("button");
+
+const userNumsList = [];
+
+button.addEventListener("click", () => {
+  for (let i = 0; i < generatedNums.length; i++) {
+    let generatedNumInput = document.getElementById(`numBox${i}`);
+    userNumsList.push(generatedNumInput.value);
+
+    console.log(userNumsList);
+  }
+});
